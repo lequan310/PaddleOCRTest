@@ -1,0 +1,29 @@
+[project]
+name = "PaddleOCRTest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.6",
+    "paddleocr>=2.9.1",
+    "paddlepaddle-gpu==3.0.0b1",
+    "python-dotenv>=1.0.1",
+    "rich>=13.9.4",
+]
+
+[tool.uv.sources]
+paddlepaddle-gpu = [
+    { index = "paddlepaddle-gpu-cu123", marker = "sys_platform == 'win32'" },
+    { index = "paddlepaddle-gpu-cu118", marker = "sys_platform != 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "paddlepaddle-gpu-cu123"
+url = "https://www.paddlepaddle.org.cn/packages/stable/cu123/"
+explicit = true
+
+[[tool.uv.index]]
+name = "paddlepaddle-gpu-cu118"
+url = "https://www.paddlepaddle.org.cn/packages/stable/cu118/"
+explicit = true
