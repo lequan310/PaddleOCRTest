@@ -12,7 +12,7 @@ app = FastAPI(title="OCR API", version="0.1.0")
 app.include_router(ocr_router)
 
 
-@app.get("/")
+@app.get("/health")
 def health_check():
     return {"message": "OK"}
 

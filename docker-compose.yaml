@@ -1,13 +1,22 @@
 services:
   api:
-    image: paddle-ocr-test
+    image: paddleocr-core
     build: 
-      context: .
+      context: ./paddleocr-core
       dockerfile: Dockerfile
     env_file:
       - .env
     ports:
       - "8000:8000"
+    restart: always
+
+  serving:
+    image: ml-serving
+    build: 
+      context: ./serving
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
     restart: always
     deploy:
       resources:

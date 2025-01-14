@@ -1,5 +1,5 @@
 [project]
-name = "PaddleOCRTest"
+name = "serving"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -7,9 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]>=0.115.6",
     "paddleocr>=2.9.1",
-    "paddlepaddle-gpu==3.0.0b1",
-    "python-dotenv>=1.0.1",
-    "rich>=13.9.4",
+    "paddlepaddle-gpu==3.0.0b2",
+    "ray[serve]>=2.40.0",
 ]
 
 [tool.uv.sources]
