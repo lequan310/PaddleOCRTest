@@ -55,9 +55,9 @@ COPY --from=builder --chown=app:app /app /app
 WORKDIR /app
 
 # Expose the port the app runs on
-EXPOSE 8000
+EXPOSE 8080
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
-CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["serve", "run", "serve_config.yaml"]

@@ -64,11 +64,6 @@ logging_config = {
         },
     },
     "loggers": {
-        "core.ocr": {
-            "handlers": ["console", "info", "error"],
-            "level": logging.DEBUG,
-            "propagate": False,
-        },
         "api.routes.ocr": {
             "handlers": ["console", "info", "error"],
             "level": logging.DEBUG,
